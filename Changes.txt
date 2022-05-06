@@ -1,0 +1,2 @@
+0.1.0 - Weekday Day Month 202X
+    * initial release of the Boa client API for JavaScript

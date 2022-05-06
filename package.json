@@ -1,0 +1,11 @@
+{
+  "name": "boa-api",
+  "version": "0.1.0",
+  "description": "Client API for using the Boa infrastructure",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Boa Project",
+  "license": "Apache-2.0"
+}
