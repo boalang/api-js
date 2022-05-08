@@ -1,5 +1,5 @@
 {
-  "name": "boa-api",
+  "name": "@boalang/boa-api",
   "version": "0.1.0",
   "description": "Client API for using the Boa infrastructure",
   "main": "index.js",
@@ -15,5 +15,17 @@
   "devDependencies": {
     "eslint": "^8.15.0",
     "eslint-config-google": "^0.14.0"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boalang/api-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/boalang/api-js/issues"
+  },
+  "homepage": "https://github.com/boalang/api-js#readme"
 }
