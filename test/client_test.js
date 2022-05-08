@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 rl.question('Enter your Boa username: ', function(username) {
   rl.question('Enter your Boa password: ', function(password) {
-    new BoaClient(BOA_API_ENDPOINT+'f').login(username, password, (client) => {
+    new BoaClient(BOA_API_ENDPOINT).login(username, password, (client) => {
       client.datasets();
     }, (error) => {
       console.log(error);
