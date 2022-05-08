@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Boa Project",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "sax": "^1.2.4",
+    "xmlbuilder2": "^3.0.2"
+  }
 }
