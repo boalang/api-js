@@ -1,19 +1,41 @@
-const BoaClient = require('../lib/boaclient.js').BoaClient;
-const BOA_API_ENDPOINT = require('../lib/boaclient.js').BOA_API_ENDPOINT;
+const boaapi = require('../lib/boaclient.js');
 
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-rl.question('Enter your Boa username: ', function(username) {
-  rl.question('Enter your Boa password: ', function(password) {
-    new BoaClient(BOA_API_ENDPOINT).login(username, password, (client) => {
-      client.datasets();
-    }, (error) => {
-      console.log(error);
-    });
-    rl.close();
+/**
+ *
+ * @param {*} query
+ * @return {*}
+ */
+function ask(query) {
+  const rl = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout,
   });
-});
+
+  return new Promise((resolve) => rl.question(query, (ans) => {
+    rl.close();
+    resolve(ans);
+  }));
+}
+
+/**
+ *
+ */
+async function main() {
+  const username = await ask('Enter your Boa username: ');
+  const password = await ask('Enter your Boa password: ');
+
+  const client = new boaapi.BoaClient(boaapi.BOA_API_ENDPOINT);
+
+  await client.login(username, password);
+
+  await client.datasets().then((datasets) => console.log(datasets));
+  await client.datasets([boaapi.adminFilter,
+    (ds) => typeof ds.id !== 'undefined' ?
+            ds.name.toLowerCase().includes('kotlin') :
+            ds.toLowerCase().includes('kotlin')])
+      .then((datasets) => console.log(datasets));
+
+  await client.close();
+}
+
+main();
