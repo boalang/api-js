@@ -60,7 +60,7 @@ async function main() {
         await client.lastJob().then(
             async (job) => {
               console.log(await job.url);
-              console.log(job.isRunning());
+              console.log(job.running);
             },
         );
 
