@@ -72,8 +72,8 @@ async function main() {
             },
         );
 
-        await client.jobList(false, 0, 1).then(
-            (jobs) => console.log(jobs),
+        await client.jobList(true, 0, 1).then(
+            async (jobs) => console.log(await jobs[0].public),
         );
       },
   ).finally(
