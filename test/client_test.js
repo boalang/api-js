@@ -58,9 +58,7 @@ async function main() {
             );
       },
   ).finally(
-      async () => {
-        await client.close();
-      },
+      () => client.close(),
   );
 }
 
