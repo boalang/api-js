@@ -44,7 +44,7 @@ async function main() {
   const client = new boaapi.BoaClient(boaapi.BOA_API_ENDPOINT);
 
   client.login(username, password).then(
-      async (result) => {
+      async () => {
         await client.datasets().then(
             (datasets) => console.log(datasets),
         );
