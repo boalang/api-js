@@ -65,9 +65,10 @@ async function main() {
         );
 
         await client.query('test').then(
-            (job) => {
-              console.log(job);
-              console.log(job.isRunning());
+            async (job) => {
+              console.log('before: ', job);
+              console.log(await job.wait());
+              console.log('after: ', job);
             },
         );
 
