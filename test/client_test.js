@@ -75,6 +75,10 @@ async function main() {
         await client.jobList(true, 0, 1).then(
             async (jobs) => console.log(await jobs[0].public),
         );
+
+        await client.getJob(545).then(
+            async (job) => console.log(await job.output),
+        );
       },
   ).finally(
       () => client.close(),
