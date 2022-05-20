@@ -58,8 +58,8 @@ async function main() {
             );
 
         await client.lastJob().then(
-            (job) => {
-              console.log(job);
+            async (job) => {
+              console.log(await job.url);
               console.log(job.isRunning());
             },
         );
