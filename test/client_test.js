@@ -56,6 +56,24 @@ async function main() {
             .then(
                 (datasets) => console.log(datasets),
             );
+
+        await client.lastJob().then(
+            (job) => {
+              console.log(job);
+              console.log(job.isRunning());
+            },
+        );
+
+        await client.query('test').then(
+            (job) => {
+              console.log(job);
+              console.log(job.isRunning());
+            },
+        );
+
+        await client.jobList(false, 0, 1).then(
+            (jobs) => console.log(jobs),
+        );
       },
   ).finally(
       () => client.close(),
