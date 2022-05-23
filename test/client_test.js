@@ -66,9 +66,7 @@ async function main() {
 
         await client.query('test').then(
             async (job) => {
-              console.log('before: ', job);
               console.log(await job.wait());
-              console.log('after: ', job);
             },
         );
 
@@ -80,6 +78,8 @@ async function main() {
             async (job) => console.log(await job.output),
         );
       },
+  ).catch(
+      (err) => console.log(err),
   ).finally(
       () => client.close(),
   );
