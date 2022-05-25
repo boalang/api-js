@@ -10,7 +10,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "sax": "^1.2.4",
-    "xmlbuilder2": "^3.0.2"
+    "xmlbuilder2": "^3.0.2",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "eslint": "^8.15.0",
