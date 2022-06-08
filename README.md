@@ -24,13 +24,13 @@ If you don't specify an endpoint, it will default to the MSR endpoint.
 ````js
 const boaapi = require('@boa/boa-api/lib/boaclient');
 
-function ask(query) {
+async function ask(question) {
   const rl = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
-  return new Promise((resolve) => rl.question(query, (ans) => {
+  return new Promise((resolve) => rl.question(question, (ans) => {
     rl.close();
     resolve(ans);
   }));
@@ -42,16 +42,36 @@ async function main() {
 
   const client = new boaapi.BoaClient(boaapi.BOA_API_ENDPOINT);
 
-  await client.login(username, password);
+  client.login(username, password).then(
+      async () => {
+        await client.datasets().then(
+            (datasets) => console.log(datasets),
+        );
 
-  await client.datasets().then((datasets) => console.log(datasets));
-  await client.datasets([boaapi.adminFilter,
-    (ds) => typeof ds.id !== 'undefined' ?
-            ds.name.toLowerCase().includes('kotlin') :
-            ds.toLowerCase().includes('kotlin')])
-      .then((datasets) => console.log(datasets));
+        await client.datasets([boaapi.adminFilter,
+          (ds) => typeof ds.id !== 'undefined' ?
+                  ds.name.toLowerCase().includes('kotlin') :
+                  ds.toLowerCase().includes('kotlin')])
+            .then(
+                (datasets) => console.log(datasets),
+            );
 
-  await client.close();
+        await client.lastJob().then(
+            async (job) => {
+              console.log(await job.url);
+              console.log(job.running);
+            },
+        );
+
+        await client.jobList(true, 0, 5).then(
+            async (jobs) => jobs.forEach((job) => console.log(job)),
+        );
+      },
+  ).catch(
+      (err) => console.log(err),
+  ).finally(
+      () => client.close(),
+  );
 }
 
 main();
