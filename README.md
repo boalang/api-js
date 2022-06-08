@@ -15,7 +15,7 @@ The main entry point for the API is a `BoaClient` object.  You use this to log i
 
 For example if you want a client for the CORD-19 endpoint, you do the following:
 
-`client = boaapi.BoaClient(boaapi.BOAC_API_ENDPOINT)`
+`const client = new boaapi.BoaClient(boaapi.BOAC_API_ENDPOINT)`
 
 If you don't specify an endpoint, it will default to the MSR endpoint.
 
