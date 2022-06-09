@@ -1,2 +1,2 @@
-0.1.0 - Weekday Day Month 202X
+0.1.0 - Thursday 9 June 2022
     * initial release of the Boa client API for JavaScript
