@@ -24,7 +24,7 @@ If you don't specify an endpoint, it will default to the MSR endpoint.
 ## Example Use (using MSR endpoint)
 
 ```js
-const boaapi = require('@boa/boa-api/lib/boaclient');
+const boaapi = require('@boa/boa-api');
 
 async function ask(question) {
   const rl = require('readline').createInterface({
