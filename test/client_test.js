@@ -36,7 +36,7 @@ async function ask(question) {
  * The test client main function.
  */
 async function main() {
-  const boaapi = require('../lib/boaclient.js');
+  const boaapi = require('@boalang/boa-api');
 
   const username = await ask('Enter your Boa username: ');
   const password = await ask('Enter your Boa password: ');
