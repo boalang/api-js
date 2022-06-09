@@ -2,7 +2,11 @@
   "name": "@boalang/boa-api",
   "version": "0.1.0",
   "description": "Client API for using the Boa infrastructure",
-  "main": "index.js",
+  "main": "lib/boaclient.js",
+  "exports": {
+    ".": "./lib/boaclient.js",
+    "./jobhandle": "./lib/jobhandle.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
