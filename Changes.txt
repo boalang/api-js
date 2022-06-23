@@ -1,3 +1,6 @@
+0.1.4 - Thursday 23 June 2022
+    * change JS dependencies to make webpack happier
+
 0.1.3 - Thursday 9 June 2022
     * move ExecutionStatus/CompilerStatus enums to the main module
     * changes to how the module exports
