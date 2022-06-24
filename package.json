@@ -1,6 +1,6 @@
 {
   "name": "@boalang/boa-api",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Client API for using the Boa infrastructure",
   "main": "lib/boaclient.js",
   "exports": {
@@ -13,7 +13,6 @@
   "author": "Boa Project",
   "license": "Apache-2.0",
   "dependencies": {
-    "browserify-zlib": "^0.2.0",
     "sax": "^1.2.4",
     "xmlbuilder2": "^3.0.2"
   },
