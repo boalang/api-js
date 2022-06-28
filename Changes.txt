@@ -1,3 +1,6 @@
+0.1.8 - Tuesday 28 June 2022
+    * add ability to download outputs directly to files
+
 0.1.7 - Friday 24 June 2022
     * change JS dependencies to make webpack happier
 
