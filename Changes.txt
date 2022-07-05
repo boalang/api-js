@@ -1,3 +1,6 @@
+0.1.9 - Tuesday 6 July 2022
+    * better connection error handling
+
 0.1.8 - Tuesday 28 June 2022
     * add ability to download outputs directly to files
 

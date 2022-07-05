@@ -1,6 +1,6 @@
 {
   "name": "@boalang/boa-api",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Client API for using the Boa infrastructure",
   "main": "lib/boaclient.js",
   "exports": {
