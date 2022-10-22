@@ -1,3 +1,7 @@
+0.2.0 - Saturday 22 October 2022
+    * now exports a list of all known API endpoints: boaclient.KNOWN_ENDPOINTS
+    * sanitizes login() errors to strip out user/password in the error messages
+
 0.1.9 - Tuesday 6 July 2022
     * better connection error handling
 
