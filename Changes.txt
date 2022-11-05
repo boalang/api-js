@@ -1,3 +1,6 @@
+0.2.1 - Saturday 5 November 2022
+    * fix problem with '&&' strings not serializing in queries
+
 0.2.0 - Saturday 22 October 2022
     * now exports a list of all known API endpoints: boaclient.KNOWN_ENDPOINTS
     * sanitizes login() errors to strip out user/password in the error messages
